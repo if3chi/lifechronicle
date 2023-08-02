@@ -1,5 +1,6 @@
 <div>
-    <button type="button" data-modal-target="large-modal" data-modal-toggle="large-modal" @click="openModal('modal')"
+    <button type="button" data-modal-target="large-modal" data-modal-toggle="large-modal"
+    {{-- onclick="openModal('modal')" --}}
         class="mx-auto lg:mx-0 flex bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
         <svg aria-hidden="true" class="w-4 h-4 mr-2 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">

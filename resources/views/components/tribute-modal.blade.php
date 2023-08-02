@@ -1,7 +1,7 @@
 {{-- @props(['open' => false]) --}}
 <!-- Main modal -->
 @php
-    $err = "border-red-500 text-red-500 placeholder:text-red-500 dark:!border-red-400 dark:!text-red-400 dark:placeholder:!text-red-400";
+    $err = 'border-red-500 text-red-500 placeholder:text-red-500 dark:!border-red-400 dark:!text-red-400 dark:placeholder:!text-red-400';
 @endphp
 
 <div id="modal"
@@ -39,8 +39,8 @@
                         class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border text-gray-600 p-3 text-sm outline-none border-gray-200">
                 </div>
                 <div class="mb-3">
-                    <input type="text" id="email3" placeholder="Error input"
-                        class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border text-gray-600 p-3 text-sm outline-none {{$err}}">
+                    <input type="text" id="email3" placeholder="phone"
+                        class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border text-gray-600 p-3 text-sm outline-none {{ $err }}">
                 </div>
                 <div>
                     <p
@@ -50,8 +50,12 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
-                        Why do I need to connect with my wallet?
+                        Upload a file or Enter you message below.
                     </p>
+                </div>
+                <div class="mb-3">
+                    <textarea type="text" id="email3" placeholder="phone"
+                        class="mt-2 flex h-12 w-full items-center justify-center rounded-xl border text-gray-600 p-3 text-sm outline-none {{ $err }}"></textarea>
                 </div>
             </div>
         </div>
@@ -64,7 +68,7 @@
                 wire:click="save">Save</button>
             <button
                 class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                @click="closeModal('modal')">Cancel</button>
+                onclick="closeModal('modal')">Cancel</button>
         </div>
     </div>
 </div>

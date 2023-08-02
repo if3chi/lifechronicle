@@ -18,12 +18,12 @@
                     This memorial website was created in memory of our loved one, Elder Mrs Cecilia Benjamin Udoekpo
                     (SW). We will remember her forever.
                 </p>
-                <livewire:CreateMessage />
+                <livewire:create-message />
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 aspect-w-16 aspect-h-9 py-6 text-center">
                 <img class="h-full w-full ml-auto md:w-3/5 z-50 transition duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
-                    src={{ asset('images/mama.jpeg') }} alt="mama">
+                    src={{ asset('images/mama.webp') }} alt="Cecilia Udoekpo">
             </div>
         </div>
     </div>
@@ -52,5 +52,5 @@
         </svg>
     </div>
 
-    <livewire:MessageList />
+    <livewire:message-list />
 </x-front-layout>
