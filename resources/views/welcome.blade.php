@@ -18,7 +18,7 @@
                     This memorial website was created in memory of our loved one, Elder Mrs Cecilia Benjamin Udoekpo
                     (SW). We will remember her forever.
                 </p>
-                <livewire:create-message />
+                <div class="w-full"><livewire:create-message /></div>
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 aspect-w-16 aspect-h-9 py-6 text-center">
