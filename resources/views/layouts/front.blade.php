@@ -10,6 +10,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link href="https://unpkg.com/@tailwindcss/forms@0.2.1/dist/forms.min.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/css/main.ad49aa9b.css" /> --}}
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
@@ -18,11 +19,17 @@
         .gradient {
             background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
         }
+
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
     @livewireStyles
 </head>
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!-- notification -->
+    <x-notification />
     <!--Nav-->
     <nav id="header" class="fixed w-full z-30 top-0 text-white">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
@@ -100,7 +107,7 @@
     </footer>
     <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
+-->
     <script>
         var scrollpos = window.scrollY;
         var header = document.getElementById("header");
@@ -185,6 +192,9 @@
         }
     </script>
     @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.3.0/cdn.min.js"
+        integrity="sha512-lqzgDz/O5Fn/IvRMT1DZKIq8gvrifTdJllDyNzr8w38zwf1zaek3PFk+sBPEB39rlzlXTI4X/kBnWAtLY5w3ow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
