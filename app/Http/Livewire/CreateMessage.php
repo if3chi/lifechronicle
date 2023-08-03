@@ -3,9 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Models\Message;
+use App\Rules\MaxWords;
+use App\Rules\MinWords;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use App\Rules\{MinWords, MaxWords};
 
 class CreateMessage extends Component
 {
@@ -14,8 +15,8 @@ class CreateMessage extends Component
     protected $listeners  = ['resetForm'];
 
     public $editing;
-    public $showForm = false;
     public $fileUpload;
+    public $showForm = false;
 
     protected $validationAttributes = [
         'editing.fullname' => 'Fullname',
@@ -42,6 +43,7 @@ class CreateMessage extends Component
     {
         $this->reset('editing');
         $this->resetValidation();
+        $this->editing['phone'] = $this->editing['message'] = '';
         $this->showForm = true;
     }
 
@@ -65,7 +67,9 @@ class CreateMessage extends Component
         ]);
 
         $this->emitSelf('resetForm');
-        $this->dispatchBrowserEvent('notify', ['title' => "Created Successfully, Thank you."]);
+        $this->dispatchBrowserEvent('notify', [
+            'title' => "We appreciate your kind words during this difficult time, Thank you for honouring Cecilia."
+        ]);
         $this->showForm = false;
     }
 

@@ -20,7 +20,7 @@
         <div class="flex mb-1 items-center justify-between">
           <div>
             <span class="text-xs font-semibold inline-block py-0.5 px-0.5 uppercase rounded-full text-green-600 bg-green-200">
-              Uploading Image
+              Uploading File
             </span>
           </div>
           <div class="text-right">
