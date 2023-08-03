@@ -22,7 +22,6 @@ class CreateMessage extends Component
         'editing.fullname' => 'Fullname',
         'editing.phone' => 'Phone',
         'editing.message' => 'Message',
-        'fileUpload' => 'file|mimes:doc,docx,pdf|max:1024',
     ];
 
     protected function rules()
@@ -30,7 +29,8 @@ class CreateMessage extends Component
         return [
             'editing.fullname' => 'required|min:2|max:256|string',
             'editing.phone' => 'nullable|string',
-            'editing.message' => ['nullable', 'string',  new MinWords(20), new MaxWords(500)]
+            'editing.message' => ['nullable', 'string',  new MinWords(20), new MaxWords(500)],
+            'fileUpload' => 'nullable|file|mimes:doc,docx,pdf|max:1024',
         ];
     }
 
@@ -59,17 +59,19 @@ class CreateMessage extends Component
             $file = $this->fileUpload->storePubliclyAs('docs', $filename);
         }
 
-        $msg = Message::create([
+        Message::create([
             'fullname' => $this->editing['fullname'],
             'phone' => $this->editing['phone'],
             'filename' => $file,
             'message' => $this->editing['message'],
         ]);
 
+        $this->emitTo('message-list', 'newMessageCreated');
         $this->emitSelf('resetForm');
         $this->dispatchBrowserEvent('notify', [
             'title' => "We appreciate your kind words during this difficult time, Thank you for honouring Cecilia."
         ]);
+        $this->dispatchBrowserEvent('scrollTimeLineToView');
         $this->showForm = false;
     }
 
